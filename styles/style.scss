@@ -1,0 +1,207 @@
+$palette1-blue: #05386b;
+$palette1-darkgreen: #379683;
+$palette1-green: #5cdb95;
+$palette1-lightgreen: #8ee4af;
+$palette1-grey: #edf5e1;
+$palette1-orange: #fba100;
+
+$palette2-darkgreen: #026670;
+$palette2-lightgreen: #9fedd7;
+$palette2-lightyellow: #fef9c7;
+$palette2-yellow: #fce181;
+$palette2-grey: #edeae5;
+
+@font-face {
+    font-family: "Lovelo";
+    src: url(../fonts/Lovelo/Lovelo-Black.ttf);
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-Light.ttf);
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-Regular.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-Bold.ttf);
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-SemiBold.ttf);
+    font-style: normal;
+    font-weight: 700;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    background: $palette2-grey;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    width: 100vw;
+    position: fixed;
+    z-index: 5;
+    .logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        margin-left: 50px;
+        cursor: pointer;
+        span {
+            font-size: 40px;
+            font-family: "Lovelo";
+            font-weight: 900;
+            margin-left: 10px;
+            color: $palette1-blue;
+        }
+        img {
+            height: 50px;
+            width: auto;
+            margin-bottom: 2px;
+        }
+    }
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 50px;
+        a {
+            cursor: pointer;
+            margin: 0 20px;
+            text-decoration: none;
+            color: $palette1-darkgreen;
+            font-family: "Raleway";
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.5s color;
+            -webkit-transition: 0.5s color;
+            -moz-transition: 0.5s color;
+
+            &:hover {
+                color: $palette1-green;
+            }
+        }
+    }
+}
+
+section {
+    z-index: 3;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: flex-start; // Arriba y abajo
+    align-content: flex-start; // Izquierda y derecha
+    transition: ease 1s;
+    .text-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; // Arriba y abajo
+        align-content: flex-start; // Izquierda y derecha
+        position: fixed;
+        height: auto;
+        transition: ease 1s;
+        h1 {
+            font-family: "Raleway";
+            font-weight: 900;
+            font-size: 73px;
+        }
+        h2 {
+            font-family: "Raleway";
+            font-weight: 700;
+            font-size: 46px;
+        }
+        h3 {
+            font-family: "Raleway";
+            font-weight: 700;
+            font-size: 29px;
+        }
+        p {
+            font-family: "Raleway";
+            font-weight: 400;
+            font-size: 18px;
+            text-align: justify;
+        }
+        &#home-text-block {
+            width: 90%;
+            top: 35%;
+            left: 5%; // Real 5%
+            text-align: center;
+            p {
+                text-align: center;
+            }
+        }
+        &#who-text-block {
+            width: 85%;
+            opacity: 0%;
+            top: 15%;
+            left: 3%; // Real 8%
+        }
+        &#who-text2-block {
+            width: 38%;
+            opacity: 0%;
+            top: 50%;
+            left: 50%; // Real 55%
+        }
+    }
+    #blue {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; // Arriba y abajo
+        align-content: flex-start; // Izquierda y derecha
+        position: fixed;
+        transition: ease 1s;
+        height: 75%;
+        width: 90%;
+        top: 16%;
+        left: 110%; // Real 5%
+        background-color: red;
+    }
+}
+
+.moving {
+    width: auto;
+    height: auto;
+    position: fixed;
+    transition: ease 1s;
+    &#yellow {
+        top: 15%;
+        left: -20%;
+        height: 150px;
+    }
+    &#green {
+        top: 0%;
+        left: 0%;
+        opacity: 20%;
+        width: 100vw;
+    }
+    &#red {
+        top: 52%;
+        left: -500px;
+        width: 500px;
+    }
+}
