@@ -75,9 +75,14 @@ nav {
       font-family: "Raleway";
       font-weight: 600;
       font-size: 18px;
-      transition: 0.5s color;
-      -webkit-transition: 0.5s color;
-      -moz-transition: 0.5s color; }
+      -webkit-transition: ease 0.6s color;
+      -moz-transition: ease 0.6s color;
+      -o-transition: ease 0.6s color;
+      transition: ease 0.6s color;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+      backface-visibility: hidden; }
       nav .links a:hover {
         color: #5cdb95; }
 
@@ -88,8 +93,7 @@ section {
   width: 100vw;
   flex-direction: column;
   justify-content: flex-start;
-  align-content: flex-start;
-  transition: ease 1s; }
+  align-content: flex-start; }
   section .text-block {
     display: flex;
     flex-direction: column;
@@ -97,7 +101,14 @@ section {
     align-content: flex-start;
     position: fixed;
     height: auto;
-    transition: ease 1s; }
+    -webkit-transition: ease 0.6s all;
+    -moz-transition: ease 0.6s all;
+    -o-transition: ease 0.6s all;
+    transition: ease 0.6s all;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden; }
     section .text-block h1 {
       font-family: "Raleway";
       font-weight: 900;
@@ -116,12 +127,13 @@ section {
       font-size: 18px;
       text-align: justify; }
     section .text-block#home-text-block {
-      width: 90%;
+      width: 70%;
       top: 35%;
-      left: 5%;
+      left: 14%;
       text-align: center; }
       section .text-block#home-text-block p {
-        text-align: center; }
+        text-align: center;
+        font-size: 29px; }
     section .text-block#who-text-block {
       width: 85%;
       opacity: 0%;
@@ -138,18 +150,32 @@ section {
     justify-content: flex-start;
     align-content: flex-start;
     position: fixed;
-    transition: ease 1s;
     height: 75%;
     width: 90%;
     top: 16%;
     left: 110%;
+    -webkit-transition: ease 1.2s all;
+    -moz-transition: ease 1.2s all;
+    -o-transition: ease 1.2s all;
+    transition: ease 1.2s all;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
     background-color: red; }
 
 .moving {
   width: auto;
   height: auto;
   position: fixed;
-  transition: ease 1s; }
+  -webkit-transition: ease 1.2s all;
+  -moz-transition: ease 1.2s all;
+  -o-transition: ease 1.2s all;
+  transition: ease 1.2s all;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden; }
   .moving#yellow {
     top: 15%;
     left: -20%;

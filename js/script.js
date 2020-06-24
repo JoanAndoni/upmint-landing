@@ -18,7 +18,7 @@ function getSections() {
 
 function setSections(type) {
     var sections = getSections();
-    let positions = [5, 8, 55];
+    let positions = [14, 8, 55];
     for (let index = 0; index < sections.length; index++) {
         if (type.includes(index)) {
             index === 0 ? sections[index].style.top = '35%' : sections[index].style.left = `${positions[index]}%`;
@@ -59,9 +59,9 @@ function who() {
     images.yellow.style.left = "-20%";
 
     images.green.style.top = "100%";
-    images.green.style.left = "40%";
+    images.green.style.left = "30%";
     images.green.style.opacity = "70%";
-    images.green.style.width = "200px";
+    images.green.style.width = "600px";
 
     images.red.style.top = "52%";
     images.red.style.left = "8%";
@@ -79,9 +79,9 @@ function work() {
     images.yellow.style.left = "-20%";
 
     images.green.style.top = "100%";
-    images.green.style.left = "40%";
+    images.green.style.left = "30%";
     images.green.style.opacity = "70%";
-    images.green.style.width = "200px";
+    images.green.style.width = "600px";
 
     images.red.style.top = "52%";
     images.red.style.left = "-500px";

@@ -46,6 +46,17 @@ $palette2-grey: #edeae5;
     font-weight: 700;
 }
 
+@mixin animation($movement, $time, $attribute) {
+    -webkit-transition: $movement $time $attribute;
+    -moz-transition: $movement $time $attribute;
+    -o-transition: $movement $time $attribute;
+    transition: $movement $time $attribute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
 body {
     overflow: hidden;
     width: 100vw;
@@ -97,10 +108,7 @@ nav {
             font-family: "Raleway";
             font-weight: 600;
             font-size: 18px;
-            transition: 0.5s color;
-            -webkit-transition: 0.5s color;
-            -moz-transition: 0.5s color;
-
+            @include animation(ease, 0.6s, color);
             &:hover {
                 color: $palette1-green;
             }
@@ -116,7 +124,6 @@ section {
     flex-direction: column;
     justify-content: flex-start; // Arriba y abajo
     align-content: flex-start; // Izquierda y derecha
-    transition: ease 1s;
     .text-block {
         display: flex;
         flex-direction: column;
@@ -124,7 +131,8 @@ section {
         align-content: flex-start; // Izquierda y derecha
         position: fixed;
         height: auto;
-        transition: ease 1s;
+        @include animation(ease, 0.6s, all);
+
         h1 {
             font-family: "Raleway";
             font-weight: 900;
@@ -147,12 +155,13 @@ section {
             text-align: justify;
         }
         &#home-text-block {
-            width: 90%;
+            width: 70%;
             top: 35%;
-            left: 5%; // Real 5%
+            left: 14%; // Real 14%
             text-align: center;
             p {
                 text-align: center;
+                font-size: 29px;
             }
         }
         &#who-text-block {
@@ -174,11 +183,11 @@ section {
         justify-content: flex-start; // Arriba y abajo
         align-content: flex-start; // Izquierda y derecha
         position: fixed;
-        transition: ease 1s;
         height: 75%;
         width: 90%;
         top: 16%;
         left: 110%; // Real 5%
+        @include animation(ease, 1.2s, all);
         background-color: red;
     }
 }
@@ -187,7 +196,8 @@ section {
     width: auto;
     height: auto;
     position: fixed;
-    transition: ease 1s;
+    @include animation(ease, 1.2s, all);
+
     &#yellow {
         top: 15%;
         left: -20%;
