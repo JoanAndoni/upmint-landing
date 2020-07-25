@@ -1,22 +1,7 @@
-$palette1-blue: #05386b;
-$palette1-darkgreen: #379683;
-$palette1-green: #5cdb95;
-$palette1-lightgreen: #8ee4af;
-$palette1-grey: #edf5e1;
-$palette1-orange: #fba100;
+$logo-color-green: #43e97b;
+$logo-color-blue: #38f9d7;
 
-$palette2-darkgreen: #026670;
-$palette2-lightgreen: #9fedd7;
-$palette2-lightyellow: #fef9c7;
-$palette2-yellow: #fce181;
-$palette2-grey: #edeae5;
-
-@font-face {
-    font-family: "Lovelo";
-    src: url(../fonts/Lovelo/Lovelo-Black.ttf);
-    font-style: normal;
-    font-weight: 900;
-}
+$color-background: #040404;
 
 @font-face {
     font-family: "Raleway";
@@ -34,6 +19,13 @@ $palette2-grey: #edeae5;
 
 @font-face {
     font-family: "Raleway";
+    src: url(../fonts/raleway/Raleway-Medium.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Raleway";
     src: url(../fonts/raleway/Raleway-Bold.ttf);
     font-style: normal;
     font-weight: 900;
@@ -44,6 +36,13 @@ $palette2-grey: #edeae5;
     src: url(../fonts/raleway/Raleway-SemiBold.ttf);
     font-style: normal;
     font-weight: 700;
+}
+
+@mixin flexbox($direction, $just, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $just;
+    align-items: $align;
 }
 
 @mixin animation($movement, $time, $attribute) {
@@ -57,161 +56,268 @@ $palette2-grey: #edeae5;
     backface-visibility: hidden;
 }
 
-body {
-    overflow: hidden;
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    background: $palette2-grey;
+@mixin noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    width: 100vw;
+    @include flexbox(row, space-between, center);
     position: fixed;
+    padding: 15px 40px;
+    width: 100vw;
+    height: auto;
     z-index: 5;
     .logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
-        margin-left: 50px;
+        @include flexbox(row, center, flex-end);
         cursor: pointer;
-        span {
-            font-size: 40px;
-            font-family: "Lovelo";
-            font-weight: 900;
-            margin-left: 10px;
-            color: $palette1-blue;
-        }
         img {
-            height: 50px;
+            height: 40px;
             width: auto;
-            margin-bottom: 2px;
         }
     }
     .links {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin-right: 50px;
+        @include flexbox(row, center, center);
         a {
             cursor: pointer;
-            margin: 0 20px;
+            margin: 0 15px;
             text-decoration: none;
-            color: $palette1-darkgreen;
+            color: white;
             font-family: "Raleway";
-            font-weight: 600;
-            font-size: 18px;
-            @include animation(ease, 0.6s, color);
+            font-weight: 400;
+            font-size: 15px;
+            @include animation(ease, 0.6s, all);
             &:hover {
-                color: $palette1-green;
+                color: $logo-color-green;
+            }
+            &.button {
+                margin: 0;
+                font-weight: 900;
+                text-transform: uppercase;
+                padding: 8px 15px;
+                border-radius: 50px;
+                color: black;
+                background-color: $logo-color-green;
+                &:hover {
+                    background-color: transparent;
+                    color: $logo-color-green;
+                }
             }
         }
     }
 }
 
 section {
-    z-index: 3;
-    position: relative;
-    height: 100vh;
+    @include flexbox(column, center, center);
     width: 100vw;
-    flex-direction: column;
-    justify-content: flex-start; // Arriba y abajo
-    align-content: flex-start; // Izquierda y derecha
-    .text-block {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; // Arriba y abajo
-        align-content: flex-start; // Izquierda y derecha
-        position: fixed;
-        height: auto;
-        @include animation(ease, 0.6s, all);
+    min-height: 100vh;
+    height: auto;
+    padding: 20px 10px;
 
-        h1 {
-            font-family: "Raleway";
-            font-weight: 900;
-            font-size: 73px;
-        }
-        h2 {
-            font-family: "Raleway";
-            font-weight: 700;
-            font-size: 46px;
-        }
-        h3 {
-            font-family: "Raleway";
-            font-weight: 700;
-            font-size: 29px;
-        }
-        p {
-            font-family: "Raleway";
-            font-weight: 400;
-            font-size: 18px;
-            text-align: justify;
-        }
-        &#home-text-block {
-            width: 70%;
-            top: 35%;
-            left: 14%; // Real 14%
-            text-align: center;
-            p {
-                text-align: center;
-                font-size: 29px;
+    &#home {
+        justify-content: flex-start;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(to bottom, rgba($color-background, 0.85), rgba($color-background, 1)),
+            url("../images/computer.jpg");
+
+        .logo-home {
+            @include flexbox(column, center, center);
+            h1 {
+                @include noSelect();
+                margin-top: 110px;
+                margin-bottom: 60px;
+                color: white;
+                font-size: 35px;
+                font-family: "Raleway";
+                font-weight: 400;
+                letter-spacing: 20px;
+                text-transform: uppercase;
+            }
+            img {
+                height: 40vh;
+                width: auto;
             }
         }
-        &#who-text-block {
-            width: 85%;
-            opacity: 0%;
-            top: 15%;
-            left: 3%; // Real 8%
-        }
-        &#who-text2-block {
-            width: 38%;
-            opacity: 0%;
-            top: 50%;
-            left: 50%; // Real 55%
+    }
+
+    &#nosotros {
+        background-color: $color-background;
+    }
+
+    &#trabajo {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
+            url("../images/board.jpg");
+        .materias-container {
+            @include flexbox(row, center, center);
+            position: relative;
+            min-height: 70vh;
+            height: auto;
+            width: 100%;
+
+            .moveArrows {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 60vh;
+                width: 40px;
+                position: absolute;
+                cursor: pointer;
+
+                .flex-img-arrow {
+                    @include noSelect();
+                    width: 40px;
+                    height: auto;
+                    transition: ease 0.3s;
+                    cursor: pointer;
+                }
+            }
+
+            #left {
+                left: 0;
+                &:hover,
+                &:active,
+                &:focus {
+                    .flex-img-arrow {
+                        width: 50px;
+                    }
+                }
+            }
+
+            #right {
+                right: 0;
+                &:hover,
+                &:active,
+                &:focus {
+                    .flex-img-arrow {
+                        width: 50px;
+                    }
+                }
+            }
+
+            .cards {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                width: calc(100% - 100px);
+                min-height: 75%;
+                height: auto;
+                transition: ease 2s all;
+                scroll-behavior: smooth;
+                overflow-x: scroll;
+            }
+
+            .card {
+                @include flexbox(column, center, center);
+                cursor: pointer;
+                padding: 15px;
+                margin: 0 4px;
+                border-radius: 5px;
+                width: 250px;
+                min-width: 250px;
+                height: 60vh;
+
+                /* Transition */
+                -webkit-transition: 0.5s ease-out;
+                -moz-transition: 0.5s ease-out;
+                -o-transition: 0.5s ease-out;
+                transition: 0.5s ease-out;
+
+                h2 {
+                    font-family: "Raleway";
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #fff;
+                    text-align: center;
+                    transition: all 0.5s ease;
+                }
+
+                /* Background */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-image: linear-gradient(rgba(#3592cf, 0.6), rgba(#3592cf, 0.8));
+                &:nth-child(5n + 2) {
+                    background-image: linear-gradient(rgba(#e83b65, 0.6), rgba(#e83b65, 0.8));
+                }
+                &:nth-child(5n + 3) {
+                    background-image: linear-gradient(rgba(#f3cc54, 0.6), rgba(#f3cc54, 0.8));
+                }
+                &:nth-child(5n + 4) {
+                    background-image: linear-gradient(rgba(#4fb69d, 0.6), rgba(#4fb69d, 0.8));
+                }
+                &:nth-child(5n + 5) {
+                    background-image: linear-gradient(rgba(#845199, 0.6), rgba(#845199, 0.8));
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    height: 70vh;
+                    min-width: 300px;
+                    background-image: linear-gradient(rgba(#3592cf, 0.6), rgba(#3592cf, 0.8));
+
+                    &:nth-child(5n + 2) {
+                        background-image: linear-gradient(rgba(#e83b65, 0.6), rgba(#e83b65, 0.8));
+                    }
+
+                    &:nth-child(5n + 3) {
+                        background-image: linear-gradient(rgba(#f3cc54, 0.6), rgba(#f3cc54, 0.8));
+                    }
+
+                    &:nth-child(5n + 4) {
+                        background-image: linear-gradient(rgba(#4fb69d, 0.6), rgba(#4fb69d, 0.8));
+                    }
+
+                    &:nth-child(5n + 5) {
+                        background-image: linear-gradient(rgba(#845199, 0.6), rgba(#845199, 0.8));
+                    }
+
+                    h2 {
+                        font-size: 32px;
+                    }
+                }
+            }
         }
     }
-    #blue {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; // Arriba y abajo
-        align-content: flex-start; // Izquierda y derecha
-        position: fixed;
-        height: 75%;
-        width: 90%;
-        top: 16%;
-        left: 110%; // Real 5%
-        @include animation(ease, 1.2s, all);
-        background-color: red;
+    &#servicios {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
+            url("../images/board.jpg");
+    }
+    &#cotizar {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(to bottom, rgba($color-background, 0.85), rgba($color-background, 1)),
+            url("../images/board.jpg");
+    }
+    &#contacto {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
+            url("../images/board.jpg");
     }
 }
 
-.moving {
-    width: auto;
-    height: auto;
-    position: fixed;
-    @include animation(ease, 1.2s, all);
-
-    &#yellow {
-        top: 15%;
-        left: -20%;
-        height: 150px;
-    }
-    &#green {
-        top: 0%;
-        left: 0%;
-        opacity: 20%;
-        width: 100vw;
-    }
-    &#red {
-        top: 52%;
-        left: -500px;
-        width: 500px;
-    }
+.divider {
+    width: 100vw;
+    height: 30px;
+    background-color: rgba($color-background, 1);
 }
