@@ -2,6 +2,7 @@ $logo-color-green: #43e97b;
 $logo-color-blue: #38f9d7;
 
 $color-background: #040404;
+$apperance-time: 2.5s;
 
 @font-face {
     font-family: "Raleway";
@@ -56,6 +57,23 @@ $color-background: #040404;
     backface-visibility: hidden;
 }
 
+@mixin show-from-top-scroll($time) {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+    transform: translateY(-2em);
+    -webkit-transition: opacity $apperance-time $time ease-out,
+        -webkit-transform $apperance-time $time cubic-bezier(0, 1, 0.3, 1);
+    transition: transform $apperance-time $time cubic-bezier(0, 1, 0.3, 1), opacity $apperance-time $time ease-out,
+        -webkit-transform $apperance-time $time cubic-bezier(0, 1, 0.3, 1);
+    will-change: transform, opacity;
+
+    &.is-visible {
+        opacity: 1;
+        -webkit-transform: translateY(0em);
+        transform: translateY(0em);
+    }
+}
+
 @mixin noSelect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -63,6 +81,13 @@ $color-background: #040404;
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently */
+}
+
+.company-name {
+    color: $logo-color-green;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 18px;
 }
 
 nav {
@@ -116,21 +141,19 @@ section {
     width: 100vw;
     min-height: 100vh;
     height: auto;
-    padding: 20px 10px;
 
     &#home {
-        justify-content: flex-start;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(to bottom, rgba($color-background, 0.85), rgba($color-background, 1)),
+        background-image: linear-gradient(to bottom, rgba($color-background, 0.8), rgba($color-background, 1)),
             url("../images/computer.jpg");
 
-        .logo-home {
+        .home-content {
             @include flexbox(column, center, center);
             h1 {
                 @include noSelect();
-                margin-top: 110px;
+                text-align: center;
                 margin-bottom: 60px;
                 color: white;
                 font-size: 35px;
@@ -148,93 +171,88 @@ section {
 
     &#nosotros {
         background-color: $color-background;
+        .nosotros-content {
+            @include flexbox(column, center, center);
+            width: 60%;
+            color: white;
+            font-family: "Raleway";
+            font-weight: 400;
+            text-align: center;
+            img {
+                @include show-from-top-scroll(0.3s);
+                margin-bottom: 40px;
+                height: 75px;
+            }
+            h1 {
+                @include noSelect();
+                @include show-from-top-scroll(1s);
+                text-transform: uppercase;
+                letter-spacing: 20px;
+                margin-bottom: 30px;
+                font-size: 30px;
+            }
+            p {
+                @include noSelect();
+                @include show-from-top-scroll(1.5s);
+                line-height: 1.5;
+                font-size: 18px;
+            }
+        }
     }
 
     &#trabajo {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
+        background-image: linear-gradient(
+                to top,
+                rgba($color-background, 1),
+                rgba($color-background, 0.75),
+                rgba($color-background, 1)
+            ),
             url("../images/board.jpg");
-        .materias-container {
-            @include flexbox(row, center, center);
+
+        .trabajo-container {
+            @include flexbox(column, center, center);
             position: relative;
-            min-height: 70vh;
+            padding-top: 45px;
+            min-height: 65vh;
             height: auto;
             width: 100%;
 
-            .moveArrows {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 60vh;
-                width: 40px;
-                position: absolute;
-                cursor: pointer;
-
-                .flex-img-arrow {
-                    @include noSelect();
-                    width: 40px;
-                    height: auto;
-                    transition: ease 0.3s;
-                    cursor: pointer;
-                }
-            }
-
-            #left {
-                left: 0;
-                &:hover,
-                &:active,
-                &:focus {
-                    .flex-img-arrow {
-                        width: 50px;
-                    }
-                }
-            }
-
-            #right {
-                right: 0;
-                &:hover,
-                &:active,
-                &:focus {
-                    .flex-img-arrow {
-                        width: 50px;
-                    }
-                }
-            }
-
-            .cards {
-                display: -webkit-box;
-                display: -moz-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-                width: calc(100% - 100px);
-                min-height: 75%;
+            #cards {
+                @include flexbox(row, flex-start, center);
+                width: calc(100% - 50px);
+                min-height: 65vh;
                 height: auto;
                 transition: ease 2s all;
                 scroll-behavior: smooth;
                 overflow-x: scroll;
             }
 
+            .title {
+                @include flexbox(column, center, center);
+                width: fit-content;
+                height: 60vh;
+                margin-right: 20px;
+                h1 {
+                    font-family: "Raleway";
+                    font-weight: 400;
+                    font-size: 50px;
+                    color: white;
+                    letter-spacing: 10px;
+                    text-transform: uppercase;
+                }
+            }
+
             .card {
                 @include flexbox(column, center, center);
                 cursor: pointer;
-                padding: 15px;
                 margin: 0 4px;
-                border-radius: 5px;
                 width: 250px;
                 min-width: 250px;
-                height: 60vh;
-
-                /* Transition */
-                -webkit-transition: 0.5s ease-out;
-                -moz-transition: 0.5s ease-out;
-                -o-transition: 0.5s ease-out;
-                transition: 0.5s ease-out;
+                height: 62vh;
+                overflow: hidden;
 
                 h2 {
                     font-family: "Raleway";
@@ -245,79 +263,134 @@ section {
                     transition: all 0.5s ease;
                 }
 
+                a {
+                    @include flexbox(column, center, center);
+                    height: 100%;
+                    width: 100%;
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+
+                /* Transition */
+                -webkit-transition: 0.5s ease-out;
+                -moz-transition: 0.5s ease-out;
+                -o-transition: 0.5s ease-out;
+                transition: 0.5s ease-out;
+
                 /* Background */
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-image: linear-gradient(rgba(#3592cf, 0.6), rgba(#3592cf, 0.8));
-                &:nth-child(5n + 2) {
-                    background-image: linear-gradient(rgba(#e83b65, 0.6), rgba(#e83b65, 0.8));
-                }
-                &:nth-child(5n + 3) {
-                    background-image: linear-gradient(rgba(#f3cc54, 0.6), rgba(#f3cc54, 0.8));
-                }
-                &:nth-child(5n + 4) {
-                    background-image: linear-gradient(rgba(#4fb69d, 0.6), rgba(#4fb69d, 0.8));
-                }
-                &:nth-child(5n + 5) {
-                    background-image: linear-gradient(rgba(#845199, 0.6), rgba(#845199, 0.8));
-                }
+                background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
 
                 &:hover,
                 &:active,
                 &:focus {
-                    height: 70vh;
-                    min-width: 300px;
-                    background-image: linear-gradient(rgba(#3592cf, 0.6), rgba(#3592cf, 0.8));
+                    height: 65vh;
+                    min-width: 270px;
+                    background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
+                }
+            }
 
-                    &:nth-child(5n + 2) {
-                        background-image: linear-gradient(rgba(#e83b65, 0.6), rgba(#e83b65, 0.8));
+            .arrows-container {
+                @include flexbox(row, flex-end, center);
+                width: calc(100% - 50px);
+                padding-top: 15px;
+                .arrow-box {
+                    @include flexbox(row, center, center);
+                    cursor: pointer;
+                    .arrow {
+                        @include noSelect();
+                        width: 30px;
+                        height: auto;
+                        cursor: pointer;
                     }
+                }
+                #left {
+                    left: 0;
+                    margin-right: 20px;
+                }
 
-                    &:nth-child(5n + 3) {
-                        background-image: linear-gradient(rgba(#f3cc54, 0.6), rgba(#f3cc54, 0.8));
-                    }
-
-                    &:nth-child(5n + 4) {
-                        background-image: linear-gradient(rgba(#4fb69d, 0.6), rgba(#4fb69d, 0.8));
-                    }
-
-                    &:nth-child(5n + 5) {
-                        background-image: linear-gradient(rgba(#845199, 0.6), rgba(#845199, 0.8));
-                    }
-
-                    h2 {
-                        font-size: 32px;
-                    }
+                #right {
+                    right: 0;
                 }
             }
         }
     }
+
     &#servicios {
+        padding: 70px 20px;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
-            url("../images/board.jpg");
+        background-image: linear-gradient(
+            to top,
+            rgba($color-background, 1),
+            rgba($color-background, 0.75),
+            rgba($color-background, 1)
+        );
+        .service {
+            @include flexbox(column, flex-start, center);
+            width: 250px;
+            height: auto;
+            margin: 30px 20px;
+            .icon {
+                margin-bottom: 20px;
+                height: 50px;
+                width: auto;
+            }
+            .title,
+            .description {
+                font-family: "Raleway";
+                @include noSelect();
+                text-align: center;
+                color: white;
+            }
+            .title {
+                font-size: 30px;
+                font-weight: 600;
+                letter-spacing: 10px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            .description {
+                font-weight: 400;
+            }
+        }
     }
+
     &#cotizar {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(to bottom, rgba($color-background, 0.85), rgba($color-background, 1)),
-            url("../images/board.jpg");
+        background-image: linear-gradient(
+            to bottom,
+            rgba($color-background, 1),
+            rgba($color-background, 0.75),
+            rgba($color-background, 1)
+        );
     }
+
     &#contacto {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: linear-gradient(to top, rgba($color-background, 0.85), rgba($color-background, 1)),
-            url("../images/board.jpg");
+        background-image: linear-gradient(
+            to top,
+            rgba($color-background, 1),
+            rgba($color-background, 0.75),
+            rgba($color-background, 1)
+        );
     }
 }
 
 .divider {
     width: 100vw;
-    height: 30px;
+    height: 50px;
     background-color: rgba($color-background, 1);
 }

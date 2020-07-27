@@ -19,7 +19,7 @@
 
 <body>
     <nav>
-        <a class="logo">
+        <a class="logo" href="#home">
             <img src="images/logo_no_text.png" alt="UpMint Logo">
         </a>
         <div class="links">
@@ -34,7 +34,7 @@
     </nav>
 
     <section id="home">
-        <div class="logo-home">
+        <div class="home-content rellax" data-rellax-speed="-2">
             <h1>Technology & Marketing</h1>
             <img src="images/logo.png" alt="">
         </div>
@@ -43,19 +43,35 @@
     <div class="divider"></div>
 
     <section id="nosotros">
-
+        <div class="nosotros-content">
+            <img class="show-on-scroll" src="images/logo_no_text.png" alt="">
+            <h1 class="show-on-scroll">
+                ¿Quiénes somos?
+            </h1>
+            <p class="show-on-scroll">
+                <span class="company-name">UpMint</span> is made up of highly talented specialists, the required team is
+                chosen based on the precise
+                relevance of their skill sets. We provide researched high-quality stylish memorable solutions that are
+                set up to enable the company to grow its online presence and succeed within its sector. We create
+                customer-centric designs that drive action. We are all about storytelling, visuals, and technology. We
+                don’t just build websites but collaborate with companies of all sizes to help them build brand awareness
+                and engage their audience.
+            </p>
+        </div>
     </section>
 
     <div class="divider"></div>
 
     <section id="trabajo">
-        <div class="materias-container">
-            <div id="left" class="moveArrows" onclick="cardScroll('cards', 'left')">
-                <img class="flex-img-arrow" src="images/chevron-back-outline.svg">
-            </div>
-            <div id="cards" class="cards">
+        <div class="trabajo-container rellax" data-rellax-speed="-2">
+            <div id="cards">
+                <div class="title">
+                    <h1>Nuestros<br>proyectos</h1>
+                </div>
                 <div class="card">
-                    <h2>Español</h2>
+                    <a href="https://www.colegiooctaviopaz.com/" target="_blank">
+                        <img src="images/ColegioOctavioPaz.png" alt="">
+                    </a>
                 </div>
                 <div class="card">
                     <h2>Robótica</h2>
@@ -70,17 +86,55 @@
                     <h2>Física</h2>
                 </div>
             </div>
-            <div id="right" class="moveArrows" onclick="cardScroll('cards', 'right')">
-                <img class="flex-img-arrow" src="images/chevron-forward-outline.svg">
+            <div class="arrows-container">
+                <div id="left" class="arrow-box" onclick="cardScroll('cards', 'left')">
+                    <img class="arrow" src="images/chevron-back-outline.svg">
+                </div>
+                <div id="right" class="arrow-box" onclick="cardScroll('cards', 'right')">
+                    <img class="arrow" src="images/chevron-forward-outline.svg">
+                </div>
             </div>
         </div>
-
     </section>
 
-    <div class="divider"></div>
+    <div class="divider" style="height: 100px;"></div>
 
     <section id="servicios">
-
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Title</h2>
+            <p class="description">Desc</p>
+        </div>
     </section>
 
     <div class="divider"></div>
@@ -95,4 +149,15 @@
 
     </section>
 
+    <script src="js/show-on-scroll.js"></script>
+    <script src="js/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax', {
+            center: true
+        });
+        var rellaxNonCentered = new Rellax('.rellax-non-centered', {
+            center: false
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </body>
