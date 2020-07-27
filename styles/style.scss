@@ -325,15 +325,8 @@ section {
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(
-            to top,
-            rgba($color-background, 1),
-            rgba($color-background, 0.75),
-            rgba($color-background, 1)
-        );
+        background-color: $color-background;
+
         .service {
             @include flexbox(column, flex-start, center);
             width: 250px;
