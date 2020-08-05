@@ -66,7 +66,6 @@ $apperance-time: 2.5s;
     transition: transform $apperance-time $time cubic-bezier(0, 1, 0.3, 1), opacity $apperance-time $time ease-out,
         -webkit-transform $apperance-time $time cubic-bezier(0, 1, 0.3, 1);
     will-change: transform, opacity;
-
     &.is-visible {
         opacity: 1;
         -webkit-transform: translateY(0em);
@@ -133,6 +132,24 @@ nav {
                 }
             }
         }
+        #language {
+            @include flexbox(row, center, center);
+            margin-right: 10px;
+            img {
+                height: 18px;
+                width: auto;
+                margin-right: 5px;
+            }
+            select {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                font-size: 16px;
+                color: $logo-color-green;
+                background-color: transparent;
+                border: none;
+            }
+        }
     }
 }
 
@@ -148,7 +165,6 @@ section {
         background-size: cover;
         background-image: linear-gradient(to bottom, rgba($color-background, 0.8), rgba($color-background, 1)),
             url("../images/computer.jpg");
-
         .home-content {
             @include flexbox(column, center, center);
             h1 {
@@ -169,14 +185,13 @@ section {
         }
     }
 
-    &#nosotros {
+    &#us {
         background-color: $color-background;
-        .nosotros-content {
+        .us-content {
             @include flexbox(column, center, center);
             width: 60%;
             color: white;
             font-family: "Raleway";
-            font-weight: 400;
             text-align: center;
             img {
                 @include show-from-top-scroll(0.3s);
@@ -186,6 +201,7 @@ section {
             h1 {
                 @include noSelect();
                 @include show-from-top-scroll(1s);
+                font-weight: 900;
                 text-transform: uppercase;
                 letter-spacing: 20px;
                 margin-bottom: 30px;
@@ -194,13 +210,14 @@ section {
             p {
                 @include noSelect();
                 @include show-from-top-scroll(1.5s);
-                line-height: 1.5;
+                font-weight: 400;
+                line-height: 1.6;
                 font-size: 18px;
             }
         }
     }
 
-    &#trabajo {
+    &#work {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -211,15 +228,13 @@ section {
                 rgba($color-background, 1)
             ),
             url("../images/board.jpg");
-
-        .trabajo-container {
+        .work-container {
             @include flexbox(column, center, center);
             position: relative;
             padding-top: 45px;
             min-height: 65vh;
             height: auto;
             width: 100%;
-
             #cards {
                 @include flexbox(row, flex-start, center);
                 width: calc(100% - 50px);
@@ -229,7 +244,6 @@ section {
                 scroll-behavior: smooth;
                 overflow-x: scroll;
             }
-
             .title {
                 @include flexbox(column, center, center);
                 width: fit-content;
@@ -237,14 +251,13 @@ section {
                 margin-right: 20px;
                 h1 {
                     font-family: "Raleway";
-                    font-weight: 400;
+                    font-weight: 900;
                     font-size: 50px;
                     color: white;
                     letter-spacing: 10px;
                     text-transform: uppercase;
                 }
             }
-
             .card {
                 @include flexbox(column, center, center);
                 cursor: pointer;
@@ -253,7 +266,6 @@ section {
                 min-width: 250px;
                 height: 62vh;
                 overflow: hidden;
-
                 h2 {
                     font-family: "Raleway";
                     font-weight: 700;
@@ -262,7 +274,6 @@ section {
                     text-align: center;
                     transition: all 0.5s ease;
                 }
-
                 a {
                     @include flexbox(column, center, center);
                     height: 100%;
@@ -272,19 +283,16 @@ section {
                         width: auto;
                     }
                 }
-
                 /* Transition */
                 -webkit-transition: 0.5s ease-out;
                 -moz-transition: 0.5s ease-out;
                 -o-transition: 0.5s ease-out;
                 transition: 0.5s ease-out;
-
                 /* Background */
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
-
                 &:hover,
                 &:active,
                 &:focus {
@@ -293,7 +301,6 @@ section {
                     background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
                 }
             }
-
             .arrows-container {
                 @include flexbox(row, flex-end, center);
                 width: calc(100% - 50px);
@@ -312,7 +319,6 @@ section {
                     left: 0;
                     margin-right: 20px;
                 }
-
                 #right {
                     right: 0;
                 }
@@ -320,18 +326,17 @@ section {
         }
     }
 
-    &#servicios {
+    &#services {
         padding: 70px 20px;
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
         background-color: $color-background;
-
         .service {
             @include flexbox(column, flex-start, center);
-            width: 250px;
+            width: 400px;
             height: auto;
-            margin: 30px 20px;
+            margin: 20px 20px;
             .icon {
                 margin-bottom: 20px;
                 height: 50px;
@@ -345,19 +350,21 @@ section {
                 color: white;
             }
             .title {
-                font-size: 30px;
-                font-weight: 600;
-                letter-spacing: 10px;
+                font-size: 25px;
+                font-weight: 900;
+                letter-spacing: 5px;
                 text-transform: uppercase;
                 margin-bottom: 10px;
             }
             .description {
                 font-weight: 400;
+                font-size: 16px;
+                line-height: 1.4;
             }
         }
     }
 
-    &#cotizar {
+    &#quote {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -369,21 +376,88 @@ section {
         );
     }
 
-    &#contacto {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(
-            to top,
-            rgba($color-background, 1),
-            rgba($color-background, 0.75),
-            rgba($color-background, 1)
-        );
+    &#contact {
+        background-color: $color-background;
+        align-items: flex-start;
+        padding: 40px 100px;
+        .title {
+            @include noSelect();
+            font-family: "Raleway";
+            letter-spacing: 10px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 35px;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
     }
 }
-
 .divider {
     width: 100vw;
     height: 50px;
     background-color: rgba($color-background, 1);
+}
+
+.input-standard {
+    margin: 8px 0;
+    width: 100%;
+
+    .input-field {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+        height: 58px;
+        position: relative;
+        overflow: hidden;
+
+        label {
+            position: absolute;
+            top: 28px;
+            left: 16px;
+            z-index: 1;
+            transition: 0.5s;
+            margin: 0;
+            color: $logo-color-green;
+            font-size: 16px;
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+        }
+
+        input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            padding: 10px 16px;
+            outline: none;
+            box-shadow: none;
+            border: 0.5px solid #dddddd;
+            border-radius: 6px;
+            background: none;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+
+            &:focus {
+                border-color: $logo-color-green;
+            }
+        }
+
+        input:focus + label,
+        input:valid + label {
+            top: 0;
+            left: 0;
+            font-size: 13px;
+            color: #9c9c9c;
+        }
+    }
 }

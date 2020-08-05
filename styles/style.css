@@ -82,6 +82,24 @@ nav {
         nav .links a.button:hover {
           background-color: transparent;
           color: #43e97b; }
+    nav .links #language {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px; }
+      nav .links #language img {
+        height: 18px;
+        width: auto;
+        margin-right: 5px; }
+      nav .links #language select {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        font-size: 16px;
+        color: #43e97b;
+        background-color: transparent;
+        border: none; }
 
 section {
   display: flex;
@@ -125,9 +143,9 @@ section {
       section#home .home-content img {
         height: 40vh;
         width: auto; }
-  section#nosotros {
+  section#us {
     background-color: #040404; }
-    section#nosotros .nosotros-content {
+    section#us .us-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -135,9 +153,8 @@ section {
       width: 60%;
       color: white;
       font-family: "Raleway";
-      font-weight: 400;
       text-align: center; }
-      section#nosotros .nosotros-content img {
+      section#us .us-content img {
         opacity: 0;
         -webkit-transform: translateY(-2em);
         transform: translateY(-2em);
@@ -146,11 +163,11 @@ section {
         will-change: transform, opacity;
         margin-bottom: 40px;
         height: 75px; }
-        section#nosotros .nosotros-content img.is-visible {
+        section#us .us-content img.is-visible {
           opacity: 1;
           -webkit-transform: translateY(0em);
           transform: translateY(0em); }
-      section#nosotros .nosotros-content h1 {
+      section#us .us-content h1 {
         -webkit-touch-callout: none;
         /* iOS Safari */
         -webkit-user-select: none;
@@ -169,15 +186,16 @@ section {
         -webkit-transition: opacity 2.5s 1s ease-out, -webkit-transform 2.5s 1s cubic-bezier(0, 1, 0.3, 1);
         transition: transform 2.5s 1s cubic-bezier(0, 1, 0.3, 1), opacity 2.5s 1s ease-out, -webkit-transform 2.5s 1s cubic-bezier(0, 1, 0.3, 1);
         will-change: transform, opacity;
+        font-weight: 900;
         text-transform: uppercase;
         letter-spacing: 20px;
         margin-bottom: 30px;
         font-size: 30px; }
-        section#nosotros .nosotros-content h1.is-visible {
+        section#us .us-content h1.is-visible {
           opacity: 1;
           -webkit-transform: translateY(0em);
           transform: translateY(0em); }
-      section#nosotros .nosotros-content p {
+      section#us .us-content p {
         -webkit-touch-callout: none;
         /* iOS Safari */
         -webkit-user-select: none;
@@ -196,18 +214,19 @@ section {
         -webkit-transition: opacity 2.5s 1.5s ease-out, -webkit-transform 2.5s 1.5s cubic-bezier(0, 1, 0.3, 1);
         transition: transform 2.5s 1.5s cubic-bezier(0, 1, 0.3, 1), opacity 2.5s 1.5s ease-out, -webkit-transform 2.5s 1.5s cubic-bezier(0, 1, 0.3, 1);
         will-change: transform, opacity;
-        line-height: 1.5;
+        font-weight: 400;
+        line-height: 1.6;
         font-size: 18px; }
-        section#nosotros .nosotros-content p.is-visible {
+        section#us .us-content p.is-visible {
           opacity: 1;
           -webkit-transform: translateY(0em);
           transform: translateY(0em); }
-  section#trabajo {
+  section#work {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: linear-gradient(to top, #040404, rgba(4, 4, 4, 0.75), #040404), url("../images/board.jpg"); }
-    section#trabajo .trabajo-container {
+    section#work .work-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -217,7 +236,7 @@ section {
       min-height: 65vh;
       height: auto;
       width: 100%; }
-      section#trabajo .trabajo-container #cards {
+      section#work .work-container #cards {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -228,7 +247,7 @@ section {
         transition: ease 2s all;
         scroll-behavior: smooth;
         overflow-x: scroll; }
-      section#trabajo .trabajo-container .title {
+      section#work .work-container .title {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -236,14 +255,14 @@ section {
         width: fit-content;
         height: 60vh;
         margin-right: 20px; }
-        section#trabajo .trabajo-container .title h1 {
+        section#work .work-container .title h1 {
           font-family: "Raleway";
-          font-weight: 400;
+          font-weight: 900;
           font-size: 50px;
           color: white;
           letter-spacing: 10px;
           text-transform: uppercase; }
-      section#trabajo .trabajo-container .card {
+      section#work .work-container .card {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -264,41 +283,41 @@ section {
         background-repeat: no-repeat;
         background-size: cover;
         background-image: linear-gradient(rgba(67, 233, 123, 0.4), rgba(67, 233, 123, 0.6)); }
-        section#trabajo .trabajo-container .card h2 {
+        section#work .work-container .card h2 {
           font-family: "Raleway";
           font-weight: 700;
           font-size: 20px;
           color: #fff;
           text-align: center;
           transition: all 0.5s ease; }
-        section#trabajo .trabajo-container .card a {
+        section#work .work-container .card a {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           height: 100%;
           width: 100%; }
-          section#trabajo .trabajo-container .card a img {
+          section#work .work-container .card a img {
             height: 100%;
             width: auto; }
-        section#trabajo .trabajo-container .card:hover, section#trabajo .trabajo-container .card:active, section#trabajo .trabajo-container .card:focus {
+        section#work .work-container .card:hover, section#work .work-container .card:active, section#work .work-container .card:focus {
           height: 65vh;
           min-width: 270px;
           background-image: linear-gradient(rgba(67, 233, 123, 0.4), rgba(67, 233, 123, 0.6)); }
-      section#trabajo .trabajo-container .arrows-container {
+      section#work .work-container .arrows-container {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         width: calc(100% - 50px);
         padding-top: 15px; }
-        section#trabajo .trabajo-container .arrows-container .arrow-box {
+        section#work .work-container .arrows-container .arrow-box {
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
           cursor: pointer; }
-          section#trabajo .trabajo-container .arrows-container .arrow-box .arrow {
+          section#work .work-container .arrows-container .arrow-box .arrow {
             -webkit-touch-callout: none;
             /* iOS Safari */
             -webkit-user-select: none;
@@ -314,31 +333,31 @@ section {
             width: 30px;
             height: auto;
             cursor: pointer; }
-        section#trabajo .trabajo-container .arrows-container #left {
+        section#work .work-container .arrows-container #left {
           left: 0;
           margin-right: 20px; }
-        section#trabajo .trabajo-container .arrows-container #right {
+        section#work .work-container .arrows-container #right {
           right: 0; }
-  section#servicios {
+  section#services {
     padding: 70px 20px;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: #040404; }
-    section#servicios .service {
+    section#services .service {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      width: 250px;
+      width: 400px;
       height: auto;
-      margin: 30px 20px; }
-      section#servicios .service .icon {
+      margin: 20px 20px; }
+      section#services .service .icon {
         margin-bottom: 20px;
         height: 50px;
         width: auto; }
-      section#servicios .service .title,
-      section#servicios .service .description {
+      section#services .service .title,
+      section#services .service .description {
         font-family: "Raleway";
         -webkit-touch-callout: none;
         /* iOS Safari */
@@ -354,28 +373,102 @@ section {
         /* Non-prefixed version, currently */
         text-align: center;
         color: white; }
-      section#servicios .service .title {
-        font-size: 30px;
-        font-weight: 600;
-        letter-spacing: 10px;
+      section#services .service .title {
+        font-size: 25px;
+        font-weight: 900;
+        letter-spacing: 5px;
         text-transform: uppercase;
         margin-bottom: 10px; }
-      section#servicios .service .description {
-        font-weight: 400; }
-  section#cotizar {
+      section#services .service .description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4; }
+  section#quote {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: linear-gradient(to bottom, #040404, rgba(4, 4, 4, 0.75), #040404); }
-  section#contacto {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: linear-gradient(to top, #040404, rgba(4, 4, 4, 0.75), #040404); }
+  section#contact {
+    background-color: #040404;
+    align-items: flex-start;
+    padding: 40px 100px; }
+    section#contact .title {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently */
+      font-family: "Raleway";
+      letter-spacing: 10px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 35px;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 25px; }
 
 .divider {
   width: 100vw;
   height: 50px;
   background-color: #040404; }
+
+.input-standard {
+  margin: 8px 0;
+  width: 100%; }
+  .input-standard .input-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 58px;
+    position: relative;
+    overflow: hidden; }
+    .input-standard .input-field label {
+      position: absolute;
+      top: 28px;
+      left: 16px;
+      z-index: 1;
+      transition: 0.5s;
+      margin: 0;
+      color: #43e97b;
+      font-size: 16px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400; }
+    .input-standard .input-field input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      padding: 10px 16px;
+      outline: none;
+      box-shadow: none;
+      border: 0.5px solid #dddddd;
+      border-radius: 6px;
+      background: none;
+      background-color: transparent;
+      color: white;
+      font-size: 16px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400; }
+      .input-standard .input-field input:focus {
+        border-color: #43e97b; }
+    .input-standard .input-field input:focus + label,
+    .input-standard .input-field input:valid + label {
+      top: 0;
+      left: 0;
+      font-size: 13px;
+      color: #9c9c9c; }
 
 /*# sourceMappingURL=style.css.map */
