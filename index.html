@@ -23,30 +23,37 @@
             <img src="images/logo_no_text.png" alt="UpMint Logo">
         </a>
         <div class="links">
-            <a href="#nosotros">Nosotros</a>
-            <a href="#trabajo">Nuestro Trabajo</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#us">About Us</a>
+            <a href="#work">Our Work</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
         <div class="links">
-            <a class="button" href="#cotizar">Cotizar</a>
+            <div id="language">
+                <img src="images/global.svg" alt="language icon">
+                <select class="select-styled" name="language" onchange="changeLanguage(this)">
+                    <option value="English" selected disabled>English</option>
+                    <option value="Español">Español</option>
+                </select>
+            </div>
+            <a class="button" href="#quote">Quote</a>
         </div>
     </nav>
 
     <section id="home">
         <div class="home-content rellax" data-rellax-speed="-2">
-            <h1>Technology & Marketing</h1>
+            <!-- <h1>Technology & Marketing</h1> -->
             <img src="images/logo.png" alt="">
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <section id="nosotros">
-        <div class="nosotros-content">
+    <section id="us">
+        <div class="us-content">
             <img class="show-on-scroll" src="images/logo_no_text.png" alt="">
             <h1 class="show-on-scroll">
-                ¿Quiénes somos?
+                About Us
             </h1>
             <p class="show-on-scroll">
                 <span class="company-name">UpMint</span> is made up of highly talented specialists, the required team is
@@ -62,11 +69,11 @@
 
     <div class="divider"></div>
 
-    <section id="trabajo">
-        <div class="trabajo-container rellax" data-rellax-speed="-2">
+    <section id="work">
+        <div class="work-container rellax" data-rellax-speed="-2">
             <div id="cards">
                 <div class="title">
-                    <h1>Nuestros<br>proyectos</h1>
+                    <h1>Our<br>projects</h1>
                 </div>
                 <div class="card">
                     <a href="https://www.colegiooctaviopaz.com/" target="_blank">
@@ -99,54 +106,75 @@
 
     <div class="divider" style="height: 100px;"></div>
 
-    <section id="servicios">
+    <section id="services">
         <div class="service">
             <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
+            <h2 class="title">Software solutions</h2>
+            <p class="description">
+                We create impressive and attractive sites, apps, and landing pages, created by our specialists, our
+                websites are clean, ready for mobile and completely customised to the needs of your business.
+                All our processes focus on smart design and amazing customer service. Our creations are not only
+                appealing but also very functional, thought through marketing tools to allow your brand to tell a story
+                and provide them with a unique brand experience.
+                Our customer-centric approach will ensure that your website creates a great customer journey, grabbing
+                their attention from the first second.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Web Design</h2>
+            <p class="description">
+                Our made from scratch websites tailored to your brand, responsive to any device or screen size to ensure
+                an amazing experience to your clients when interacting with your brand. We know speed is important. We
+                optimise performance with a fast loading website, making your clients happy and Google boosting your
+                rank.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Web Development</h2>
             <p class="description">Desc</p>
         </div>
         <div class="service">
             <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
+            <h2 class="title">Content creation</h2>
+            <p class="description">
+                After a careful and thought through research, the content is personalised and tailored to your audience
+                closely aligned with the needs and interests clearly with people.
+            </p>
         </div>
         <div class="service">
             <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
+            <h2 class="title">Branding</h2>
+            <p class="description">
+                We help you to make a unique story, delivering consistency, uniqueness and B2B. Whether you are looking
+                to rebrand or refresh, we can help. Our marketing team will help you to create an identity you and your
+                brand will be proud of.</p>
         </div>
         <div class="service">
             <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
-        </div>
-        <div class="service">
-            <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
-        </div>
-        <div class="service">
-            <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
-        </div>
-        <div class="service">
-            <img src="images/code.svg" alt="" class="icon">
-            <h2 class="title">Title</h2>
-            <p class="description">Desc</p>
+            <h2 class="title">Copywriting</h2>
+            <p class="description">We want to give your brand a voice, a story with simplicity bringing curiosity to
+                keep your audience engaged.</p>
         </div>
     </section>
 
     <div class="divider"></div>
 
-    <section id="cotizar">
+    <section id="quote">
 
     </section>
 
     <div class="divider"></div>
 
-    <section id="contacto">
-
+    <section id="contact">
+        <h1 class="title">Contact Us</h1>
+        <div class="input-standard">
+            <div class="input-field">
+                <input type="text" name="fullName" autocomplete="" required>
+                <label for="fullName">Full Name*</label>
+            </div>
+        </div>
     </section>
 
     <script src="js/show-on-scroll.js"></script>
