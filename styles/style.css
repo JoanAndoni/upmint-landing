@@ -390,29 +390,83 @@ section {
     background-image: linear-gradient(to bottom, #040404, rgba(4, 4, 4, 0.75), #040404); }
   section#contact {
     background-color: #040404;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 40px 100px; }
-    section#contact .title {
-      -webkit-touch-callout: none;
-      /* iOS Safari */
-      -webkit-user-select: none;
-      /* Safari */
-      -khtml-user-select: none;
-      /* Konqueror HTML */
-      -moz-user-select: none;
-      /* Old versions of Firefox */
-      -ms-user-select: none;
-      /* Internet Explorer/Edge */
-      user-select: none;
-      /* Non-prefixed version, currently */
-      font-family: "Raleway";
-      letter-spacing: 10px;
-      text-align: center;
-      font-weight: 900;
-      font-size: 35px;
-      color: white;
-      text-transform: uppercase;
-      margin-bottom: 25px; }
+    section#contact .half {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      height: 100%;
+      width: 60%; }
+      section#contact .half .title,
+      section#contact .half .subtitle {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently */
+        font-family: "Raleway";
+        margin-bottom: 10px;
+        text-align: center;
+        color: white;
+        width: 100%; }
+      section#contact .half .title {
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: 10px;
+        text-transform: uppercase; }
+      section#contact .half .subtitle {
+        font-size: 20px;
+        font-weight: 400; }
+      section#contact .half .button {
+        cursor: pointer;
+        text-decoration: none;
+        font-family: "Raleway";
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        border-radius: 50px;
+        color: black;
+        background-color: white;
+        -webkit-transition: ease 0.6s all;
+        -moz-transition: ease 0.6s all;
+        -o-transition: ease 0.6s all;
+        transition: ease 0.6s all;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden; }
+        section#contact .half .button:hover {
+          background-color: #43e97b;
+          color: black; }
+      section#contact .half#left {
+        padding: 0;
+        width: 40%;
+        height: calc(100vh - 200px); }
+        section#contact .half#left .img-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          height: 100%;
+          width: 80%; }
+          section#contact .half#left .img-container .img-asset {
+            height: 100%;
+            width: auto; }
 
 .divider {
   width: 100vw;
@@ -442,7 +496,8 @@ section {
       font-size: 16px;
       font-family: "Raleway", sans-serif;
       font-weight: 400; }
-    .input-standard .input-field input {
+    .input-standard .input-field input,
+    .input-standard .input-field textarea {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -462,10 +517,15 @@ section {
       font-size: 16px;
       font-family: "Raleway", sans-serif;
       font-weight: 400; }
-      .input-standard .input-field input:focus {
+      .input-standard .input-field input:focus,
+      .input-standard .input-field textarea:focus {
         border-color: #43e97b; }
+    .input-standard .input-field.textarea {
+      height: 94px; }
     .input-standard .input-field input:focus + label,
-    .input-standard .input-field input:valid + label {
+    .input-standard .input-field input:valid + label,
+    .input-standard .input-field textarea:focus + label,
+    .input-standard .input-field textarea:valid + label {
       top: 0;
       left: 0;
       font-size: 13px;

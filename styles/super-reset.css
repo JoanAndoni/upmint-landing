@@ -106,6 +106,7 @@ button::-moz-focus-inner,
 
 textarea {
     overflow: auto;
+    resize: none;
 }
 
 [type="checkbox"],

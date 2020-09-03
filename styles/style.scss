@@ -378,21 +378,79 @@ section {
 
     &#contact {
         background-color: $color-background;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         padding: 40px 100px;
-        .title {
-            @include noSelect();
-            font-family: "Raleway";
-            letter-spacing: 10px;
-            text-align: center;
-            font-weight: 900;
-            font-size: 35px;
-            color: white;
-            text-transform: uppercase;
-            margin-bottom: 25px;
+        .half {
+            @include flexbox(column, center, center);
+            padding: 30px;
+            height: 100%;
+            width: 60%;
+            .title,
+            .subtitle {
+                @include noSelect();
+                font-family: "Raleway";
+                margin-bottom: 10px;
+                text-align: center;
+                color: white;
+                width: 100%;
+            }
+
+            .title {
+                font-size: 32px;
+                font-weight: 900;
+                letter-spacing: 10px;
+                text-transform: uppercase;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                font-weight: 400;
+            }
+
+            .button {
+                cursor: pointer;
+                text-decoration: none;
+                font-family: "Raleway";
+                font-size: 20px;
+                margin-top: 10px;
+                font-weight: 900;
+                text-transform: uppercase;
+                padding: 12px 24px;
+                border-radius: 50px;
+                color: black;
+                background-color: white;
+                @include animation(ease, 0.6s, all);
+                &:hover {
+                    background-color: $logo-color-green;
+                    color: black;
+                }
+            }
+
+            &#left {
+                padding: 0;
+                width: 40%;
+                height: calc(100vh - 200px);
+                .img-container {
+                    @include flexbox(column, center, center);
+                    overflow: hidden;
+                    height: 100%;
+                    width: 80%;
+                    .img-asset {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+
+            // &#right {
+            //     background-color: rgba($color: #494949, $alpha: 0.1);
+            // }
         }
     }
 }
+
 .divider {
     width: 100vw;
     height: 50px;
@@ -426,7 +484,8 @@ section {
             font-weight: 400;
         }
 
-        input {
+        input,
+        textarea {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -452,8 +511,14 @@ section {
             }
         }
 
+        &.textarea {
+            height: 94px;
+        }
+
         input:focus + label,
-        input:valid + label {
+        input:valid + label,
+        textarea:focus + label,
+        textarea:valid + label {
             top: 0;
             left: 0;
             font-size: 13px;

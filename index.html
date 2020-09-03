@@ -29,20 +29,20 @@
             <a href="#contact">Contact</a>
         </div>
         <div class="links">
-            <div id="language">
+            <!-- <div id="language">
                 <img src="images/global.svg" alt="language icon">
                 <select class="select-styled" name="language" onchange="changeLanguage(this)">
                     <option value="English" selected disabled>English</option>
                     <option value="Español">Español</option>
                 </select>
-            </div>
+            </div> -->
             <a class="button" href="#quote">Quote</a>
         </div>
     </nav>
 
     <section id="home">
         <div class="home-content rellax" data-rellax-speed="-2">
-            <!-- <h1>Technology & Marketing</h1> -->
+            <h1>Technology & Marketing</h1>
             <img src="images/logo.png" alt="">
         </div>
     </section>
@@ -81,16 +81,15 @@
                     </a>
                 </div>
                 <div class="card">
-                    <h2>Robótica</h2>
+                    <h2>BusyBee</h2>
                 </div>
                 <div class="card">
-                    <h2>Natación</h2>
+                    <a href="https://www.asimotki.com/" target="_blank">
+                        <img src="images/asimotki.png" alt="">
+                    </a>
                 </div>
                 <div class="card">
-                    <h2>Matemáticas</h2>
-                </div>
-                <div class="card">
-                    <h2>Física</h2>
+                    <h2>And more...</h2>
                 </div>
             </div>
             <div class="arrows-container">
@@ -168,12 +167,39 @@
     <div class="divider"></div>
 
     <section id="contact">
-        <h1 class="title">Contact Us</h1>
-        <div class="input-standard">
-            <div class="input-field">
-                <input type="text" name="fullName" autocomplete="" required>
-                <label for="fullName">Full Name*</label>
+        <div id="left" class="half">
+            <div class="img-container">
+                <img class="img-asset" src="images/call-min.jpg" alt="">
             </div>
+        </div>
+        <div id="right" class="half">
+            <h1 class="title">Contact Us</h1>
+            <h3 class="subtitle">Feel free to contact us and we will figure out a solution for your needs</h3>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input type="text" name="fullName" autocomplete="" required>
+                    <label for="fullName">Full Name</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input type="text" name="email" autocomplete="" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input type="text" name="subject" autocomplete="" required>
+                    <label for="subject">Subject</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field textarea">
+                    <textarea name="text" id="textarea" cols="20" rows="3" required></textarea>
+                    <label for="text">Text . . . </label>
+                </div>
+            </div>
+            <a class="button" href="#quote">Send</a>
         </div>
     </section>
 
