@@ -14,6 +14,7 @@
     <!--NORMALIZATION-->
     <link rel="stylesheet" type="text/css" href="styles/super-reset.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </head>
 
@@ -22,21 +23,20 @@
         <a class="logo" href="#home">
             <img src="images/logo_no_text.png" alt="UpMint Logo">
         </a>
-        <div class="links">
+        <div id="nav-links" class="links">
             <a href="#us">About Us</a>
             <a href="#work">Our Work</a>
             <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
         </div>
         <div class="links">
-            <!-- <div id="language">
+            <div id="language">
                 <img src="images/global.svg" alt="language icon">
                 <select class="select-styled" name="language" onchange="changeLanguage(this)">
                     <option value="English" selected disabled>English</option>
                     <option value="Español">Español</option>
                 </select>
-            </div> -->
-            <a class="button" href="#quote">Quote</a>
+            </div>
+            <a class="button" href="#contact">Quote</a>
         </div>
     </nav>
 
@@ -160,16 +160,10 @@
 
     <div class="divider"></div>
 
-    <section id="quote">
-
-    </section>
-
-    <div class="divider"></div>
-
     <section id="contact">
         <div id="left" class="half">
             <div class="img-container">
-                <img class="img-asset" src="images/call-min.jpg" alt="">
+                <img class="img-asset" src="images/contact_Mesa de trabajo 1.png" alt="">
             </div>
         </div>
         <div id="right" class="half">
@@ -177,31 +171,37 @@
             <h3 class="subtitle">Feel free to contact us and we will figure out a solution for your needs</h3>
             <div class="input-standard">
                 <div class="input-field">
-                    <input type="text" name="fullName" autocomplete="" required>
+                    <input id="fullName" type="text" name="fullName" autocomplete="" required>
                     <label for="fullName">Full Name</label>
                 </div>
             </div>
             <div class="input-standard">
                 <div class="input-field">
-                    <input type="text" name="email" autocomplete="" required>
+                    <input id="email" type="text" name="email" autocomplete="" required>
                     <label for="email">Email</label>
                 </div>
             </div>
             <div class="input-standard">
                 <div class="input-field">
-                    <input type="text" name="subject" autocomplete="" required>
+                    <input id="subject" type="text" name="subject" autocomplete="" required>
                     <label for="subject">Subject</label>
                 </div>
             </div>
             <div class="input-standard">
                 <div class="input-field textarea">
-                    <textarea name="text" id="textarea" cols="20" rows="3" required></textarea>
+                    <textarea id="text" name="text" id="textarea" cols="20" rows="3" required></textarea>
                     <label for="text">Text . . . </label>
                 </div>
             </div>
-            <a class="button" href="#quote">Send</a>
+            <a class="button" onclick="sendEmail('en')">Send</a>
         </div>
     </section>
+
+    <footer>
+        <h2>
+            Footer
+        </h2>
+    </footer>
 
     <script src="js/show-on-scroll.js"></script>
     <script src="js/rellax.min.js"></script>

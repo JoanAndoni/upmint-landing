@@ -100,6 +100,8 @@ nav {
         color: #43e97b;
         background-color: transparent;
         border: none; }
+    nav .links#nav-links {
+      margin-left: calc(10vw); }
 
 section {
   display: flex;
@@ -242,18 +244,24 @@ section {
         justify-content: flex-start;
         align-items: center;
         width: calc(100% - 50px);
-        min-height: 65vh;
+        min-height: 320px;
         height: auto;
         transition: ease 2s all;
         scroll-behavior: smooth;
-        overflow-x: scroll; }
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */ }
+      section#work .work-container #cards::-webkit-scrollbar {
+        display: none; }
       section#work .work-container .title {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: fit-content;
-        height: 60vh;
+        height: 320px;
         margin-right: 20px; }
         section#work .work-container .title h1 {
           font-family: "Raleway";
@@ -269,20 +277,15 @@ section {
         align-items: center;
         cursor: pointer;
         margin: 0 4px;
-        width: 250px;
-        min-width: 250px;
-        height: 62vh;
+        min-width: 600px;
+        height: 290px;
         overflow: hidden;
         /* Transition */
         -webkit-transition: 0.5s ease-out;
         -moz-transition: 0.5s ease-out;
         -o-transition: 0.5s ease-out;
         transition: 0.5s ease-out;
-        /* Background */
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-image: linear-gradient(rgba(67, 233, 123, 0.4), rgba(67, 233, 123, 0.6)); }
+        /* Background */ }
         section#work .work-container .card h2 {
           font-family: "Raleway";
           font-weight: 700;
@@ -298,12 +301,11 @@ section {
           height: 100%;
           width: 100%; }
           section#work .work-container .card a img {
-            height: 100%;
-            width: auto; }
+            height: auto;
+            width: 100%; }
         section#work .work-container .card:hover, section#work .work-container .card:active, section#work .work-container .card:focus {
-          height: 65vh;
-          min-width: 270px;
-          background-image: linear-gradient(rgba(67, 233, 123, 0.4), rgba(67, 233, 123, 0.6)); }
+          min-width: calc(600px * 1.1);
+          height: calc(290px * 1.1); }
       section#work .work-container .arrows-container {
         display: flex;
         flex-direction: row;
@@ -454,19 +456,17 @@ section {
           color: black; }
       section#contact .half#left {
         padding: 0;
-        width: 40%;
-        height: calc(100vh - 200px); }
+        width: 40%; }
         section#contact .half#left .img-container {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           overflow: hidden;
-          height: 100%;
-          width: 80%; }
+          width: 90%; }
           section#contact .half#left .img-container .img-asset {
-            height: 100%;
-            width: auto; }
+            width: 100%;
+            height: auto; }
 
 .divider {
   width: 100vw;

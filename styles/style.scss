@@ -150,6 +150,9 @@ nav {
                 border: none;
             }
         }
+        &#nav-links {
+            margin-left: calc(10vw);
+        }
     }
 }
 
@@ -238,16 +241,21 @@ section {
             #cards {
                 @include flexbox(row, flex-start, center);
                 width: calc(100% - 50px);
-                min-height: 65vh;
+                min-height: 320px;
                 height: auto;
                 transition: ease 2s all;
                 scroll-behavior: smooth;
                 overflow-x: scroll;
+                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none; /* Firefox */
+            }
+            #cards::-webkit-scrollbar {
+                display: none;
             }
             .title {
                 @include flexbox(column, center, center);
                 width: fit-content;
-                height: 60vh;
+                height: 320px;
                 margin-right: 20px;
                 h1 {
                     font-family: "Raleway";
@@ -262,9 +270,8 @@ section {
                 @include flexbox(column, center, center);
                 cursor: pointer;
                 margin: 0 4px;
-                width: 250px;
-                min-width: 250px;
-                height: 62vh;
+                min-width: 600px;
+                height: 290px;
                 overflow: hidden;
                 h2 {
                     font-family: "Raleway";
@@ -279,8 +286,8 @@ section {
                     height: 100%;
                     width: 100%;
                     img {
-                        height: 100%;
-                        width: auto;
+                        height: auto;
+                        width: 100%;
                     }
                 }
                 /* Transition */
@@ -289,16 +296,16 @@ section {
                 -o-transition: 0.5s ease-out;
                 transition: 0.5s ease-out;
                 /* Background */
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
+                // background-position: center;
+                // background-repeat: no-repeat;
+                // background-size: cover;
+                // background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
                 &:hover,
                 &:active,
                 &:focus {
-                    height: 65vh;
-                    min-width: 270px;
-                    background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
+                    min-width: calc(600px * 1.1);
+                    height: calc(290px * 1.1);
+                    // background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
                 }
             }
             .arrows-container {
@@ -431,15 +438,13 @@ section {
             &#left {
                 padding: 0;
                 width: 40%;
-                height: calc(100vh - 200px);
                 .img-container {
                     @include flexbox(column, center, center);
                     overflow: hidden;
-                    height: 100%;
-                    width: 80%;
+                    width: 90%;
                     .img-asset {
-                        height: 100%;
-                        width: auto;
+                        width: 100%;
+                        height: auto;
                     }
                 }
             }
