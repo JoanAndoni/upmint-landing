@@ -295,17 +295,11 @@ section {
                 -moz-transition: 0.5s ease-out;
                 -o-transition: 0.5s ease-out;
                 transition: 0.5s ease-out;
-                /* Background */
-                // background-position: center;
-                // background-repeat: no-repeat;
-                // background-size: cover;
-                // background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
                 &:hover,
                 &:active,
                 &:focus {
                     min-width: calc(600px * 1.1);
                     height: calc(290px * 1.1);
-                    // background-image: linear-gradient(rgba($logo-color-green, 0.4), rgba($logo-color-green, 0.6));
                 }
             }
             .arrows-container {
@@ -448,10 +442,6 @@ section {
                     }
                 }
             }
-
-            // &#right {
-            //     background-color: rgba($color: #494949, $alpha: 0.1);
-            // }
         }
     }
 }
@@ -527,7 +517,6 @@ section {
             top: 0;
             left: 0;
             font-size: 13px;
-            color: #9c9c9c;
         }
     }
 }
