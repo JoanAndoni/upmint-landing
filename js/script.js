@@ -7,10 +7,10 @@ function cardScroll(idCard, direction) {
 
 function changeLanguage(selectLanguage) {
     if (selectLanguage.value === 'Español') {
-        window.location.replace('www.upmint.co');
+        location.replace("https://www.upmint.co");
     }
     if (selectLanguage.value === 'English') {
-        window.location.replace('en.upmint.co');
+        location.replace("https://en.upmint.co");
     }
 }
 
