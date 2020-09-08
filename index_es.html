@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="UpMint">
+    <meta name="description" content="">
+
+    <title>UpMint</title>
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
+
+    <!--NORMALIZATION-->
+    <link rel="stylesheet" type="text/css" href="styles/super-reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <a class="logo" href="#home">
+            <img src="images/logo_no_text.png" alt="UpMint Logo">
+        </a>
+        <div id="nav-links" class="links">
+            <a href="#us">Nosotros</a>
+            <a href="#work">Nuestro Trabajo</a>
+            <a href="#services">Servicios</a>
+        </div>
+        <div class="links">
+            <div id="language">
+                <img src="images/global.svg" alt="language icon">
+                <select class="select-styled" name="language" onchange="changeLanguage(this)">
+                    <option value="English">English</option>
+                    <option value="Español" selected disabled>Español</option>
+                </select>
+            </div>
+            <a class="button" href="#contact">Cotiza</a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="home-content rellax" data-rellax-speed="-2">
+            <h1>Tecnología & Marketing</h1>
+            <img src="images/logo.png" alt="">
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="us">
+        <div class="us-content">
+            <img class="show-on-scroll" src="images/logo_no_text.png" alt="">
+            <h1 class="show-on-scroll">
+                Acerca de nosotros
+            </h1>
+            <p class="show-on-scroll">
+                <span class="company-name">UpMint</span> está compuesto por especialistas altamente talentosos, el
+                equipo requerido se elige en función de la relevancia precisa de sus habilidades. Brindamos soluciones
+                memorables que están configuradas para permitir que la empresa aumente su presencia en línea y tenga
+                éxito dentro de su sector a través de diseños centrados en el cliente que impulsan la acción.
+                Nos dedicamos a contar historias, imágenes y tecnología. No solo creamos sitios web, sino que
+                colaboramos con empresas de todos los tamaños para ayudarlas a generar conciencia de marca e involucrar
+                a su audiencia.
+            </p>
+            <br>
+            <p class="show-on-scroll">
+                Trabajamos con marcas como la tuya, ayudando a recrear sus visiones, a crear sitios web que tus
+                clientes recordarán. Mostrar su marca con orgullo para que su nuevo sitio web, cuidadosamente diseñado,
+                se alinee cuidadosamente con la voz y los valores de su marca. Diseñamos y desarrollamos productos
+                digitales y experiencias en línea para ayudarlo a tener éxito y crecer. Le ayudamos a identificar sus
+                objetivos y a utilizar nuestra experiencia para crear resultados sorprendentes.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="work">
+        <div class="work-container rellax" data-rellax-speed="-2">
+            <div id="cards">
+                <div class="title">
+                    <h1>Nuestros<br>proyectos</h1>
+                </div>
+                <div class="card">
+                    <a href="https://www.colegiooctaviopaz.com/" target="_blank">
+                        <img src="images/ColegioOctavioPaz.png" alt="">
+                    </a>
+                </div>
+                <div class="card">
+                    <h2>BusyBee</h2>
+                </div>
+                <div class="card">
+                    <a href="https://www.asimotki.com/" target="_blank">
+                        <img src="images/asimotki.png" alt="">
+                    </a>
+                </div>
+                <!-- <div class="card">
+                    <h2>Y más...</h2>
+                </div> -->
+            </div>
+            <div class="arrows-container">
+                <div id="left" class="arrow-box" onclick="cardScroll('cards', 'left')">
+                    <img class="arrow" src="images/chevron-back-outline.svg">
+                </div>
+                <div id="right" class="arrow-box" onclick="cardScroll('cards', 'right')">
+                    <img class="arrow" src="images/chevron-forward-outline.svg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider" style="height: 100px;"></div>
+
+    <section id="services">
+        <div class="top-service">
+            <img src="images/code.svg" alt="" class="icon">
+            <h2 class="title">Soluciones de Software</h2>
+            <p class="description">
+                Creamos sitios, aplicaciones y páginas de destino impresionantes y atractivos, creados por nuestros
+                especialistas, nuestros sitios web están limpios, listos para dispositivos móviles y completamente
+                personalizados para las necesidades de su negocio. Todos nuestros procesos se centran en un diseño
+                inteligente y un excelente servicio al cliente. Nuestras creaciones no solo son atractivas sino también
+                muy funcionales.
+                <br>
+                Nuestro enfoque centrado en el cliente garantizará que su sitio web cree un gran recorrido del cliente,
+                captando su atención desde el primer segundo.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/web_design.svg" alt="" class="icon">
+            <h2 class="title">Diseño Web</h2>
+            <p class="description">
+                Nuestros sitios web hechos desde cero se adaptan a su marca, responden a cualquier dispositivo o tamaño
+                de pantalla para garantizar una experiencia increíble a sus clientes al interactuar con su marca.
+                Optimizamos el rendimiento con un sitio web de carga rápida, lo que lo hace feliz a usted y a sus
+                clientes.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/web.svg" alt="" class="icon">
+            <h2 class="title">Desarrollo Web</h2>
+            <p class="description">
+                Desarrollamos aplicaciones web, disponibles en línea para millones de usuarios en todo el mundo,
+                asegurándonos de que su sitio web sea poderoso, efectivo y atractivo a través de un diseño audaz y
+                receptivo: probado y mantenible. También te ayudaremos a ponerlo en marcha.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/mobile.svg" alt="" class="icon">
+            <h2 class="title">Desarrollo Mobil</h2>
+            <p class="description">
+                Creamos aplicaciones móviles iOS y Android completamente funcionales. Nos aseguramos de que su
+                aplicación sea fácil de usar y cumpla con todos los requisitos que acordamos. Trabajando juntos, creamos
+                una aplicación con la que está satisfecho.
+            </p>
+        </div>
+        <div class="service">
+            <img src="images/devops.svg" alt="" class="icon">
+            <h2 class="title">Devops</h2>
+            <p class="description">
+                Combinando el desarrollo de software y las operaciones de TI, queremos ayudar a su empresa a entregar
+                aplicaciones y servicios a alta velocidad, mientras mejora la confiabilidad.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+        <div id="left" class="half">
+            <div class="img-container">
+                <img class="img-asset" src="images/LaptopShipping.png" alt="">
+            </div>
+        </div>
+        <div id="right" class="half">
+            <h1 class="title">Contactanos</h1>
+            <h3 class="subtitle">No dude en contactarnos y encontraremos una solución para sus necesidades</h3>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input id="fullName" type="text" name="fullName" autocomplete="" required>
+                    <label for="fullName">Nombre completo</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input id="email" type="text" name="email" autocomplete="" required>
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field">
+                    <input id="subject" type="text" name="subject" autocomplete="" required>
+                    <label for="subject">Asunto</label>
+                </div>
+            </div>
+            <div class="input-standard">
+                <div class="input-field textarea">
+                    <textarea id="text" name="text" id="textarea" cols="20" rows="3" required></textarea>
+                    <label for="text">Mensaje</label>
+                </div>
+            </div>
+            <a class="button" onclick="sendEmail('es')">Enviar</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="info">
+            <div class="box-footer">
+                <h2>UPMINT</h2>
+                <p>Nosotros siempre vamos una milla extra</p>
+                <p>Trabajamos como parte de tu equipo</p>
+                <p>We build websites worth talking about</p>
+            </div>
+            <div class="box-footer">
+
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="social-media">
+            <div class="call-action">
+                <p>
+                    ¡Hablemos! <a class="email" href="mailto:info@upmint.co">info@upmint.co</a>
+                </p>
+            </div>
+            <div class="icons">
+                <a href="https://www.facebook.com/upmint.co">
+                    <img src="images/facebook.svg" alt="">
+                </a>
+                <a href="https://www.instagram.com/upmint.co">
+                    <img src="images/instagram.svg" alt="">
+                </a>
+                <a href="#">
+                    <img src="images/linkedin.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/show-on-scroll.js"></script>
+    <script src="js/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.rellax', {
+            center: true
+        });
+        var rellaxNonCentered = new Rellax('.rellax-non-centered', {
+            center: false
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</body>

@@ -82,6 +82,16 @@ $apperance-time: 2.5s;
     user-select: none; /* Non-prefixed version, currently */
 }
 
+/* Mobile and iPad Portrait */
+@media only screen and (max-width: 890px) {
+}
+/* Mobile Landscape and Portrait */
+@media only screen and (max-width: 767px) {
+}
+/* Mobile Portrait */
+@media only screen and (max-width: 479px) {
+}
+
 .company-name {
     color: $logo-color-green;
     text-transform: uppercase;
@@ -154,6 +164,13 @@ nav {
             margin-left: calc(10vw);
         }
     }
+    /* Mobile Landscape and Portrait */
+    @media only screen and (max-width: 767px) {
+        justify-content: center;
+        .links {
+            display: none;
+        }
+    }
 }
 
 section {
@@ -170,6 +187,8 @@ section {
             url("../images/computer.jpg");
         .home-content {
             @include flexbox(column, center, center);
+            padding: 0;
+            margin: 0;
             h1 {
                 @include noSelect();
                 text-align: center;
@@ -184,6 +203,32 @@ section {
             img {
                 height: 40vh;
                 width: auto;
+            }
+            /* Mobile Landscape and Portrait */
+            @media only screen and (max-width: 767px) {
+                padding: 10px;
+                h1 {
+                    font-size: 32px;
+                    letter-spacing: 15px;
+                }
+                img {
+                    height: auto;
+                    width: 80%;
+                }
+            }
+            /* Mobile Portrait */
+            @media only screen and (max-width: 479px) {
+                padding: 10px;
+                h1 {
+                    font-size: 28px;
+                }
+            }
+
+            @media only screen and (max-width: 405px) {
+                h1 {
+                    font-size: 24px;
+                    letter-spacing: 10px;
+                }
             }
         }
     }
@@ -333,11 +378,12 @@ section {
         justify-content: space-around;
         flex-wrap: wrap;
         background-color: $color-background;
-        .service {
+        .service,
+        .top-service {
             @include flexbox(column, flex-start, center);
             width: 400px;
             height: auto;
-            margin: 20px 20px;
+            margin: 20px;
             .icon {
                 margin-bottom: 20px;
                 height: 50px;
@@ -361,6 +407,13 @@ section {
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 1.4;
+            }
+        }
+        .top-service {
+            width: 65%;
+            margin: 20px 15%;
+            .title {
+                font-size: 35px;
             }
         }
     }
@@ -441,6 +494,103 @@ section {
                         height: auto;
                     }
                 }
+            }
+        }
+        /* Mobile and iPad Portrait */
+        @media only screen and (max-width: 890px) {
+            flex-direction: column;
+            padding: 20px 70px;
+            .half {
+                width: 100%;
+                &#left {
+                    width: 60%;
+                    .img-container {
+                        width: 90%;
+                        .img-asset {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        /* Mobile Landscape and Portrait */
+        @media only screen and (max-width: 767px) {
+        }
+        /* Mobile Portrait */
+        @media only screen and (max-width: 479px) {
+            padding: 10px 40px;
+            .half {
+                padding: 10px;
+                &#left {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @include flexbox(column, center, flex-start);
+    padding: 40px 15%;
+    width: 100%;
+    background-color: $color-background;
+    .info {
+        @include flexbox(row, center, flex-start);
+        .box-footer {
+            @include flexbox(column, center, flex-start);
+            h2,
+            p {
+                font-family: "Raleway", sans-serif;
+            }
+            h2 {
+                color: $logo-color-green;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                margin-bottom: 15px;
+                font-weight: 900;
+            }
+            p {
+                margin-bottom: 7px;
+                font-weight: 600;
+                color: white;
+            }
+        }
+    }
+    .footer-divider {
+        background-color: grey;
+        height: 2px;
+        width: 100%;
+        margin: 30px 0;
+    }
+    .social-media {
+        @include flexbox(column, center, center);
+        width: 100%;
+        .icons {
+            @include flexbox(row, center, center);
+            width: 100%;
+            margin: 25px 0 0 0;
+            a {
+                @include flexbox(column, center, center);
+                height: 30px;
+                margin: 10px;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+        .call-action {
+            margin: 10px 0 0 0;
+            p {
+                color: white;
+                font-family: "Raleway", sans-serif;
+                font-weight: 400;
+                font-size: 20px;
+            }
+            .email {
+                color: white;
+                text-decoration: none;
+                font-weight: 900;
             }
         }
     }

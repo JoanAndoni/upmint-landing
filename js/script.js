@@ -7,11 +7,11 @@ function cardScroll(idCard, direction) {
 
 function changeLanguage(selectLanguage) {
     if (selectLanguage.value === 'Español') {
-        // window.location.href = 'www.upmint.co';
+        window.location.href = 'www.upmint.co';
         window.location.replace('www.upmint.co');
     }
     if (selectLanguage.value === 'English') {
-        // window.location.href = 'en.upmint.co';
+        window.location.href = 'en.upmint.co';
         window.location.replace('en.upmint.co');
     }
 }
@@ -22,7 +22,6 @@ function validateEmail(email) {
 }
 
 function sendEmail(lang) {
-    console.log(lang);
     var info = {
         fullName: document.getElementById('fullName').value,
         email: document.getElementById('email').value,
