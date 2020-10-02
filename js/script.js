@@ -5,6 +5,15 @@ function cardScroll(idCard, direction) {
     direction === 'left' ? cards.scrollLeft -= movement : cards.scrollLeft += movement;
 }
 
+// FUNCION QUE CREA EL EFECTO DE HACER NEGRO EL NAVBAR
+$(window).on('scroll', function () {
+    if ($(window).scrollTop()) {
+        $('.nav').addClass('black');
+    } else {
+        $('.nav').removeClass('black');
+    }
+});
+
 function changeLanguage(selectLanguage) {
     if (selectLanguage.value === 'Español') {
         location.replace("https://www.upmint.co");
@@ -20,13 +29,20 @@ function validateEmail(email) {
 }
 
 function sendEmail(lang) {
+    var loading = document.getElementById('loading'),
+        popup = document.getElementById('mail-sent'),
+        popupText = document.getElementById('popupText'),
+        fullname = document.getElementById('fullName'),
+        email = document.getElementById('email'),
+        subject = document.getElementById('subject'),
+        text = document.getElementById('text');
+    loading.style.display = "flex";
     var info = {
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        text: document.getElementById('text').value
+        fullname: fullname.value,
+        email: email.value,
+        subject: subject.value,
+        text: text.value
     };
-
     if (!validateEmail(info.email)) {
         lang === 'es' ? alert('El email es invalido') : alert('The email is not valid');
     } else {
@@ -38,13 +54,24 @@ function sendEmail(lang) {
             From: "admin@upmint.co",
             Subject: "Contact from web page",
             Body: `
-            Name: ${info.fullName}
-            Subject: ${info.subject}
-            Email: ${info.email}
-            Text: ${info.text}
-        `
+                Name: ${info.fullname}
+                Subject: ${info.subject}
+                Email: ${info.email}
+                Text: ${info.text}
+            `
         }).then(message => {
-            alert(message);
+            loading.style.display = "none";
+            fullname.value = '';
+            email.value = '';
+            subject.value = '';
+            text.value = '';
+            if (message.includes('OK')) {
+                popupText.innerHTML = lang === 'es' ? 'El correo fue enviado exitosamente' : 'The email was sent successfully';
+            } else {
+                popupText.innerHTML = lang === 'es' ? 'El correo no pudo ser enviado, intentelo denuevo' : "The email couldn't be sent, please try again";
+            }
+            popup.style.display = 'flex';
+            setTimeout(function () { popup.style.display = "none"; }, 3000);
         });
     }
 }

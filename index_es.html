@@ -14,12 +14,17 @@
     <!--NORMALIZATION-->
     <link rel="stylesheet" type="text/css" href="styles/super-reset.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- SCRIPT SMTP -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- SCRIPT JQUERY -->
+    <script src="js/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <nav>
+    <nav class="nav">
         <a class="logo" href="#home">
             <img src="images/logo_no_text.png" alt="UpMint Logo">
         </a>
@@ -41,21 +46,20 @@
     </nav>
 
     <section id="home">
-        <div class="home-content rellax" data-rellax-speed="-2">
+        <div class="home-content rellax" data-rellax-speed="-1">
             <h1>Tecnología & Marketing</h1>
             <img src="images/logo.png" alt="">
+            <!-- <a class="button" href="#contact">Call to Action</a> -->
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section id="us">
         <div class="us-content">
-            <img class="show-on-scroll" src="images/logo_no_text.png" alt="">
-            <h1 class="show-on-scroll">
+            <img src="images/logo_no_text.png" alt="">
+            <h1>
                 Acerca de nosotros
             </h1>
-            <p class="show-on-scroll">
+            <p>
                 <span class="company-name">UpMint</span> está compuesto por especialistas altamente talentosos, el
                 equipo requerido se elige en función de la relevancia precisa de sus habilidades. Brindamos soluciones
                 memorables que están configuradas para permitir que la empresa aumente su presencia en línea y tenga
@@ -65,7 +69,7 @@
                 a su audiencia.
             </p>
             <br>
-            <p class="show-on-scroll">
+            <p>
                 Trabajamos con marcas como la tuya, ayudando a recrear sus visiones, a crear sitios web que tus
                 clientes recordarán. Mostrar su marca con orgullo para que su nuevo sitio web, cuidadosamente diseñado,
                 se alinee cuidadosamente con la voz y los valores de su marca. Diseñamos y desarrollamos productos
@@ -75,10 +79,8 @@
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section id="work">
-        <div class="work-container rellax" data-rellax-speed="-2">
+        <div class="work-container rellax" data-rellax-speed="-1">
             <div id="cards">
                 <div class="title">
                     <h1>Nuestros<br>proyectos</h1>
@@ -110,8 +112,6 @@
             </div>
         </div>
     </section>
-
-    <div class="divider" style="height: 100px;"></div>
 
     <section id="services">
         <div class="top-service">
@@ -166,8 +166,6 @@
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section id="contact">
         <div id="left" class="half">
             <div class="img-container">
@@ -211,10 +209,7 @@
                 <h2>UPMINT</h2>
                 <p>Nosotros siempre vamos una milla extra</p>
                 <p>Trabajamos como parte de tu equipo</p>
-                <p>We build websites worth talking about</p>
-            </div>
-            <div class="box-footer">
-
+                <p>Creamos sitios web de los que vale la pena hablar</p>
             </div>
         </div>
         <div class="footer-divider"></div>
@@ -238,7 +233,20 @@
         </div>
     </footer>
 
-    <script src="js/show-on-scroll.js"></script>
+    <div id="mail-sent" class="popup">
+        <div class="container">
+            <img src="images/sent.png" alt="">
+            <h2 id="popupText" class="text-popup"></h2>
+        </div>
+    </div>
+
+    <div id="loading">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+
     <script src="js/rellax.min.js"></script>
     <script>
         var rellax = new Rellax('.rellax', {
@@ -248,5 +256,5 @@
             center: false
         });
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>

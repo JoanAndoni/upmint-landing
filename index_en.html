@@ -14,12 +14,16 @@
     <!--NORMALIZATION-->
     <link rel="stylesheet" type="text/css" href="styles/super-reset.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- SCRIPT SMTP -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- SCRIPT JQUERY -->
+    <script src="js/jquery.min.js"></script>
 </head>
 
 <body>
-    <nav>
+    <nav class="nav">
         <a class="logo" href="#home">
             <img src="images/logo_no_text.png" alt="UpMint Logo">
         </a>
@@ -44,18 +48,17 @@
         <div class="home-content rellax" data-rellax-speed="-2">
             <h1>Technology & Marketing</h1>
             <img src="images/logo.png" alt="">
+            <!-- <a class="button" href="#contact">Call to Action</a> -->
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section id="us">
         <div class="us-content">
-            <img class="show-on-scroll" src="images/logo_no_text.png" alt="">
-            <h1 class="show-on-scroll">
+            <img src="images/logo_no_text.png" alt="">
+            <h1>
                 About Us
             </h1>
-            <p class="show-on-scroll">
+            <p>
                 <span class="company-name">UpMint</span> is made up of highly talented specialists, the required team is
                 chosen based on the precise relevance of their skill sets.
                 We provide memorable solutions that are set up to enable the company to grow its online presence and
@@ -64,7 +67,7 @@
                 with companies of all sizes to help them build brand awareness and engage their audience.
             </p>
             <br>
-            <p class="show-on-scroll">
+            <p>
                 We work with brands like yours, helping to recreate your visions and create websites that your clients
                 will remember. Displaying your brand with pride so that Your new, carefully tailored website will align
                 carefully with your brand voice and values.
@@ -73,8 +76,6 @@
             </p>
         </div>
     </section>
-
-    <div class="divider"></div>
 
     <section id="work">
         <div class="work-container rellax" data-rellax-speed="-2">
@@ -109,8 +110,6 @@
             </div>
         </div>
     </section>
-
-    <div class="divider" style="height: 100px;"></div>
 
     <section id="services">
         <div class="top-service">
@@ -162,8 +161,6 @@
         </div>
     </section>
 
-    <div class="divider"></div>
-
     <section id="contact">
         <div id="left" class="half">
             <div class="img-container">
@@ -209,9 +206,6 @@
                 <p>We work as a part of your team</p>
                 <p>We build websites worth talking about</p>
             </div>
-            <div class="box-footer">
-
-            </div>
         </div>
         <div class="footer-divider"></div>
         <div class="social-media">
@@ -234,7 +228,20 @@
         </div>
     </footer>
 
-    <script src="js/show-on-scroll.js"></script>
+    <div id="mail-sent" class="popup">
+        <div class="container">
+            <img src="images/sent.png" alt="">
+            <h2 id="popupText" class="text-popup"></h2>
+        </div>
+    </div>
+
+    <div id="loading">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+
     <script src="js/rellax.min.js"></script>
     <script>
         var rellax = new Rellax('.rellax', {
@@ -244,5 +251,5 @@
             center: false
         });
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
