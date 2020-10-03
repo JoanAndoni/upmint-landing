@@ -36,7 +36,6 @@ function sendEmail(lang) {
         email = document.getElementById('email'),
         subject = document.getElementById('subject'),
         text = document.getElementById('text');
-    loading.style.display = "flex";
     var info = {
         fullname: fullname.value,
         email: email.value,
@@ -46,6 +45,7 @@ function sendEmail(lang) {
     if (!validateEmail(info.email)) {
         lang === 'es' ? alert('El email es invalido') : alert('The email is not valid');
     } else {
+        loading.style.display = "flex";
         Email.send({
             Host: "smtp.elasticemail.com",
             Username: "admin@upmint.co",
